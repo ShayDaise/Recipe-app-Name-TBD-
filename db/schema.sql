@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS soulfeed_db;
+
+CREATE DATABASE soulfeed_db;
