@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Recipe, User, Review, Like } = require('../../models');
+const { Recipe, User, Review, Likes } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // get all users
@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
         'recipe_text',
         'title',
         'created_at',
-       // [sequelize.literal('(SELECT COUNT(*) FROM like WHERE recipe.id = like.recipe_id)'), 'like_count']
+        [sequelize.literal('(SELECT COUNT(*) FROM likes WHERE recipe.id = likes.recipe_id)'), 'likes_count']
       ],
       include: [
         {
@@ -46,7 +46,7 @@ router.get('/', (req, res) => {
         'recipe_text',
         'title',
         'created_at',
-        [sequelize.literal('(SELECT COUNT(*) FROM like WHERE recipe.id = like.recipe_id)'), 'like_count']
+        [sequelize.literal('(SELECT COUNT(*) FROM likes WHERE recipe.id = likes.recipe_id)'), 'likes_count']
       ],
       include: [
         {
@@ -77,7 +77,7 @@ router.get('/', (req, res) => {
   });
   
   router.post('/', withAuth, (req, res) => {
-    // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
+    // expects {title: 'Grandma's cookies', recipe_text: 'best cookies ever', user_id: 1}
     Recipe.create({
       title: req.body.title,
       recipe_text: req.body.recipe_text,
@@ -92,8 +92,8 @@ router.get('/', (req, res) => {
   
   router.put('addlike', withAuth, (req, res) => {
     // custom static method created in models/Post.js
-    Recipe.upvote({ ...req.body, user_id: req.session.user_id }, { Like, Review, User })
-      .then(updatedLikeData => res.json(updatedLikeData))
+    Recipe.addlike({ ...req.body, user_id: req.session.user_id }, { Likes, Review, User })
+      .then(updatedLikesData => res.json(updatedLikesData))
       .catch(err => {
         console.log(err);
         res.status(500).json(err);

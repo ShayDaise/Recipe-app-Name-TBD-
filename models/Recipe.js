@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-// creates our Recipe model
+// create our Recipe model
 class Recipe extends Model {
   static addlike(body, models) {
-    return models.Like.create({
+    return models.Likes.create({
       user_id: body.user_id,
       recipe_id: body.recipe_id
     }).then(() => {
@@ -13,10 +13,10 @@ class Recipe extends Model {
         },
         attributes: [
           'id',
-          'title',
           'recipe_text',
+          'title',
           'created_at',
-          [sequelize.literal('(SELECT COUNT(*) FROM like WHERE recipe.id = like.recipe_id)'), 'like_count']
+          [sequelize.literal('(SELECT COUNT(*) FROM likes WHERE recipe.id = likes.recipe_id)'), 'likes_count']
         ],
         include: [
           {
@@ -33,11 +33,11 @@ class Recipe extends Model {
   }
 }
 
-// create fields/columns for Recipe model
+// create fields/columns for Post model
 Recipe.init(
   {
     id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
@@ -50,16 +50,9 @@ Recipe.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1]
+        len:[1]
       }
     },
-    recipe_ingredients: {
-        type: DataTypes.ARRAY,
-        allowNull: false,
-        validate: {
-          len: [1]
-        }
-      },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
