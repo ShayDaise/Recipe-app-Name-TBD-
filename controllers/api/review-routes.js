@@ -18,7 +18,7 @@ router.post('/', withAuth, (req, res) => {
   Review.create({
     review_text: req.body.review_text,
     user_id: req.session.user_id,
-    recipe_id: req.body.post_id
+    recipe_id: req.body.recipe_id
   })
     .then(dbReviewData => res.json(dbReviewData))
     .catch(err => {
