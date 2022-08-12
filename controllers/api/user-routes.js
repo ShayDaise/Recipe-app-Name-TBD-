@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Recipe, Review, Like } = require('../../models');
 
 // route to see all users
 router.get('/', (req, res) => {
@@ -36,21 +36,40 @@ router.get('/', (req, res) => {
       });
   });
 
-  router.post('/', (req, res) => {
-    // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
-    User.create({
-      username: req.body.username,
-      email: req.body.email,
-      password: req.body.password
+  //route to find one user
+  router.get('/:id', (req, res) => {
+    User.findOne({
+      attributes: { exclude: ['password'] },
+      where: {
+        id: req.params.id
+      },
+      include: [
+        {
+          model: Recipe,
+          attributes: ['id', 'title', 'created_at']
+        },
+        {
+          model: Review,
+          attributes: ['id', 'review_text', 'created_at'],
+          include: {
+            model: Recipe,
+            attributes: ['title']
+          }
+        },
+        {
+          model: Recipe,
+          attributes: ['title'],
+          through: Like,
+          as: 'liked_recipes'
+        }
+      ]
     })
       .then(dbUserData => {
-        req.session.save(() => {
-          req.session.user_id = dbUserData.id;
-          req.session.username = dbUserData.username;
-          req.session.loggedIn = true;
-    
-          res.json(dbUserData);
-        });
+        if (!dbUserData) {
+          res.status(404).json({ message: 'No user found with this id' });
+          return;
+        }
+        res.json(dbUserData);
       })
       .catch(err => {
         console.log(err);
