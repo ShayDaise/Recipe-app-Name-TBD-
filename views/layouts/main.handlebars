@@ -4,30 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" type="text.css" href="/public/css/style.css">
     <title>Placeholder</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 <body>
   <header>
-    <h1>Foodie Blog</h1>
+    <h1 class="title is-1">Foodie Blog</h1>
   </header>
-  <nav class="column is-full">
-    <a href="/" class="level-left">Home</a>
+  <nav class="navbar is-dark is-full">
+    <div class="navbar-brand">
+    <a href="/" class="level-left navbar-item">Home</a>
     {{#if loggedIn}}
     <button id="logout" class="btn-no-style">Logout</button>
     {{else}}
-    <a class="level-left">Login</a>
+    <a class="level-left navbar-item">Login</a>
     {{/if}}
-    <a class="level-right">Search</a>
+    <a class="navbar-item navbar-end">Search</a>
+    </div>
   </nav>
   <main>
     <aside>
-      <h2>Recipes</h2>
+      <h2 class="title is-2">Recipes</h2>
     </aside>
-    <section class="hero">
-      <div class="hero-body">
-       <p class="title">
+
+    <div class="column">
+    <div class="card column">
+      <div class="card-image is-align-items-center">
+     <figure class="image is-3by2">
+      <img src="https://via.placeholder.com/200x200" alt="Placeholder image">
+      </figure>
+    </div>
+      <div class="card-content">
+       <p class="card-header-title is-4 is-centered">
          Grilled Peach and Burrata Salad
        </p>
        <p class="subtitle">
@@ -37,7 +46,7 @@
         1/8 teaspoon black pepper
         1 1/2 cups salsa verde, either jarred or homemade, divided
         Oil, for the grill
-
+{{!-- 
        Prepare the chicken:
        With scissors or a sharp knife, trim the excess skin and fat from the thighs. Sprinkle with salt and pepper on both sides.
        
@@ -54,13 +63,58 @@
        Move the chicken to the cooler side of the grill. Continue to cook, turning once or twice, for about 6 to 8 minutes or until the temperature in thickest part of the chicken registers 165oF. Transfer the chicken to a platter and let it rest for 10 minutes.
 
        Serve the chicken:
-       Transfer the chicken to a platter or individual plates. Serve with the remaining 1/2 cup salsa verde on the side and your choice of toppings.
+       Transfer the chicken to a platter or individual plates. Serve with the remaining 1/2 cup salsa verde on the side and your choice of toppings. --}}
        </p>
-      </div>
-    </section>
-    {{!-- <div>
-      {{{body}}}
-    </div> --}}
+     </div>
+    </div>
+</div>
+
+<div class="cloumn">
+<div class="card column">
+      <div class="card-image is-align-items-center">
+     <figure class="image is-3by2">
+      <img src="https://via.placeholder.com/200x200" alt="Placeholder image">
+      </figure>
+    </div>
+      <div class="card-content">
+       <p class="card-header-title is-4 is-centered">
+         Grilled Peach and Burrata Salad
+       </p>
+       <p class="subtitle">
+        Ingredients: 
+        8 bone-in, skin-on chicken thighs (about 3 pounds)  
+        1/2 teaspoon salt
+        1/8 teaspoon black pepper
+        1 1/2 cups salsa verde, either jarred or homemade, divided
+        Oil, for the grill
+        </p>
+     </div>
+    </div>
+</div>
+
+<div class="column">
+<div class="card column">
+      <div class="card-image is-align-items-center">
+     <figure class="image is-3by2">
+      <img src="https://via.placeholder.com/200x200" alt="Placeholder image">
+      </figure>
+    </div>
+      <div class="card-content">
+       <p class="card-header-title is-4 is-centered">
+         Grilled Peach and Burrata Salad
+       </p>
+       <p class="subtitle">
+        Ingredients: 
+        8 bone-in, skin-on chicken thighs (about 3 pounds)  
+        1/2 teaspoon salt
+        1/8 teaspoon black pepper
+        1 1/2 cups salsa verde, either jarred or homemade, divided
+        Oil, for the grill
+        </p>
+     </div>
+    </div>
+</div>
+
   </main>
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
