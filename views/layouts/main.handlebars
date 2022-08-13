@@ -6,26 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text.css" href="/public/css/style.css">
     <title>Placeholder</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 <body>
   <header>
-    <h1>PLACEHOLDER</h1>
+    <h1>Foodie Blog</h1>
   </header>
-  <nav>
-    <a href="/">Home</a>
+  <nav class="column is-full">
+    <a href="/" class="level-left">Home</a>
     {{#if loggedIn}}
     <button id="logout" class="btn-no-style">Logout</button>
     {{else}}
-    <a>Login</a>
+    <a class="level-left">Login</a>
     {{/if}}
+    <a class="level-right">Search</a>
   </nav>
   <main>
     <aside>
-      <h2>PLACEHOLDER</h2>
+      <h2>Recipes</h2>
     </aside>
-    <div>
+    <section class="hero">
+      <div class="hero-body">
+       <p class="title">
+         Grilled Peach and Burrata Salad
+       </p>
+       <p class="subtitle">
+        Ingredients: 
+        8 bone-in, skin-on chicken thighs (about 3 pounds)  
+        1/2 teaspoon salt
+        1/8 teaspoon black pepper
+        1 1/2 cups salsa verde, either jarred or homemade, divided
+        Oil, for the grill
+
+       Prepare the chicken:
+       With scissors or a sharp knife, trim the excess skin and fat from the thighs. Sprinkle with salt and pepper on both sides.
+       
+       Marinate the chicken:
+       In a bowl, toss the chicken with 1 cup of the salsa verde to coat. Cover with plastic and refrigerate for 1 hour or up to overnight.
+       
+       Prepare the grill:
+       If you are using a gas grill, set one side to high temperature and the other side to low temperature. Heat the grill to at least 450°F.
+       If you are using a charcoal grill, prepare a two-level fire by mounding the coals on one side of the grill, and leaving the second side empty.
+       When your grill is hot, use tongs to oil the grill grates with a small folded piece of paper towel dipped in oil.
+       
+       Grill the chicken:
+       Remove the chicken from the marinade. Place the thighs on the hot side of the grill, skin-side down. Cook them for a minute or two—just long enough for the skin to show the grill marks. Flip over and sear briefly on the other side. (Exact timing depends on the heat of your particular grill.)
+       Move the chicken to the cooler side of the grill. Continue to cook, turning once or twice, for about 6 to 8 minutes or until the temperature in thickest part of the chicken registers 165oF. Transfer the chicken to a platter and let it rest for 10 minutes.
+
+       Serve the chicken:
+       Transfer the chicken to a platter or individual plates. Serve with the remaining 1/2 cup salsa verde on the side and your choice of toppings.
+       </p>
+      </div>
+    </section>
+    {{!-- <div>
       {{{body}}}
-    </div>
+    </div> --}}
   </main>
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
