@@ -90,10 +90,11 @@ router.get('/', (req, res) => {
       });
   });
   
-  router.put('addlike', withAuth, (req, res) => {
+  router.put('/addlike', withAuth, (req, res) => {
     // custom static method created in models/Post.js
     Recipe.addlike({ ...req.body, user_id: req.session.user_id }, { Likes, Review, User })
-      .then(updatedLikesData => res.json(updatedLikesData))
+      .then(updatedLikesData =>{ res.json(updatedLikesData)
+      console.log(updatedLikesData) })
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
