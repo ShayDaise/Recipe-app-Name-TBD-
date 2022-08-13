@@ -54,7 +54,8 @@ Recipe.init(
       }
     },
     recipe_ingredients: {
-        type: DataTypes.ARRAY,
+        // type: DataTypes.ARRAY,
+        type: DataTypes.STRING,
         allowNull: false,
         validate: {
           len: [1]
