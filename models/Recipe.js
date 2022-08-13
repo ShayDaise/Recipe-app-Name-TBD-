@@ -37,7 +37,7 @@ class Recipe extends Model {
 Recipe.init(
   {
     id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
