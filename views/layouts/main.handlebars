@@ -4,31 +4,191 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" type="text.css" href="/public/css/style.css">
     <title>Placeholder</title>
 </head>
 <body>
   <header>
-    <h1>PLACEHOLDER</h1>
+    <h1 class="title is-1 has-text-primary-dark has-background-primary-light is-family-monospace">
+      Foodie Go To</h1>
   </header>
-  <nav>
-    <a href="/">Home</a>
+<div class="column has-background-primary-light"></div>
+
+  <nav class="navbar is-dark is-full">
+    <div class="navbar-brand">
+    <a href="/" class="level-left navbar-item">
+     Home
+    </a>
     {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
+    <button id="logout" class="btn-no-style">
+      Logout
+    </button>
     {{else}}
-    <a>Login</a>
+    <a class="level-left navbar-item">
+      Login
+    </a>
     {{/if}}
+    <a class="navbar-item navbar-end">
+      Search
+    </a>
+    </div>
   </nav>
   <main>
+
+   <div class="column has-background-primary-light"></div>
     <aside>
-      <h2>PLACEHOLDER</h2>
+      <h2 class="title is-2 has-text-primary-dark has-background-primary-light is-family-code">
+        Recipes</h2>
     </aside>
-    <div>
-      {{{body}}}
+   <div class="column has-background-primary-light"></div>
+
+    <div class="column has-background-primary-light">
+    <div class="card column">
+      <div class="card-image is-align-items-center">
+     <figure class="image is-3by1">
+      <img src="/Recipe-app-Name-TBD-/assets/images/grilled-peach.png" alt="Placeholder image">
+      </figure>
     </div>
+      <div class="card-content">
+       <p class="card-header-title is-4 is-centered">
+         Grilled Peach and Burrata Salad
+       </p>
+       <p class="subtitle">
+         Grilled peach and burrata salad is summertime on a plate. The mix of grilled peaches, creamy burrata, arugula, pine nuts and balsamic is perfection. When it comes to summer salads, this one’s a winner.
+        </p>
+     </div>
+    </div>
+</div>
+
+<div class="cloumn has-background-primary-light">
+<div class="card column">
+      <div class="card-image is-align-items-center">
+     <figure class="image is-3by1">
+      <img src="/Recipe-app-Name-TBD-/assets/images/easy-salad.png" alt="Placeholder image">
+      </figure>
+    </div>
+      <div class="card-content">
+       <p class="card-header-title is-4 is-centered">
+         Easy Cucumber, Peach, and Basil Salad
+       </p>
+       <p class="subtitle">
+         Cool, crunchy cucumbers combined with sweet, juicy peaches and dressed in a peppery basil vinaigrette is a great way to make the most of summer and all its gorgeous flavors. This refreshing salad is easy to make and goes great with grilled meat.
+       </p>
+     </div>
+    </div>
+</div>
+
+<div class="column has-background-primary-light">
+<div class="card column has-primary-dark">
+      <div class="card-image is-align-items-center">
+     <figure class="image is-3by1">
+      <img src="/Recipe-app-Name-TBD-/assets/images/tomato-salad.png" alt="Placeholder image">
+      </figure>
+    </div>
+      <div class="card-content">
+       <p class="card-header-title is-4 is-centered">
+         Simple Summer Tomato Salad
+       </p>
+       <p class="subtitle">
+        This simple salad makes the most of juicy tomatoes at the peak of season. Toss ripe tomatoes with a classic vinaigrette, thinly sliced red onion, and a shower of fresh basil and mint. You’ll want to have it on repeat all summer long.
+        </p>
+     </div>
+    </div>
+</div>
+
   </main>
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
 </html>
+
+{{!-- Grilled Peach Barrata Salad --}}
+{{!-- Ingredients: 
+        8 bone-in, skin-on chicken thighs (about 3 pounds)  
+        1/2 teaspoon salt
+        1/8 teaspoon black pepper
+        1 1/2 cups salsa verde, either jarred or homemade, divided
+        Oil, for the grill --}}
+{{!-- 
+       Prepare the chicken:
+       With scissors or a sharp knife, trim the excess skin and fat from the thighs. Sprinkle with salt and pepper on both sides.
+       
+       Marinate the chicken:
+       In a bowl, toss the chicken with 1 cup of the salsa verde to coat. Cover with plastic and refrigerate for 1 hour or up to overnight.
+       
+       Prepare the grill:
+       If you are using a gas grill, set one side to high temperature and the other side to low temperature. Heat the grill to at least 450°F.
+       If you are using a charcoal grill, prepare a two-level fire by mounding the coals on one side of the grill, and leaving the second side empty.
+       When your grill is hot, use tongs to oil the grill grates with a small folded piece of paper towel dipped in oil.
+       
+       Grill the chicken:
+       Remove the chicken from the marinade. Place the thighs on the hot side of the grill, skin-side down. Cook them for a minute or two—just long enough for the skin to show the grill marks. Flip over and sear briefly on the other side. (Exact timing depends on the heat of your particular grill.)
+       Move the chicken to the cooler side of the grill. Continue to cook, turning once or twice, for about 6 to 8 minutes or until the temperature in thickest part of the chicken registers 165oF. Transfer the chicken to a platter and let it rest for 10 minutes.
+
+       Serve the chicken:
+       Transfer the chicken to a platter or individual plates. Serve with the remaining 1/2 cup salsa verde on the side and your choice of toppings. --}}
+     
+
+     {{!-- Easy Cucumber, Peach, and Basil Salad
+     Ingredients
+     For the salad:
+     1 (12- to 14-inch) English cucumber, cut into 1-inch chunks
+     2 fresh peaches, cut into 1-inch chunks
+     For the vinaigrette:
+     2 tablespoons avocado oil or olive oil
+     1 tablespoon white wine vinegar
+     Zest of 1 lime
+     1 tablespoon honey
+     4 large fresh basil leaves, plus more for garnish
+     1/8 teaspoon kosher salt, or to taste
+     1/8 teaspoon freshly ground black pepper, or to taste
+
+     Prep the vegetables:
+     Add the chopped peaches and cucumbers to a large bowl.
+
+     Make the vinaigrette:
+     In the bowl or a mini food processor or blender, combine the oil, vinegar, lime zest and juice, honey, basil, salt and pepper. Pulse until the basil is finely chopped and the vinaigrette is completely emulsified.
+
+     Dress the produce:
+     Pour the vinaigrette over the peach and cucumber mixture. Stir to coat evenly.
+
+     Serve:
+     Transfer to a serving platter, garnish with torn basil leaves and serve immediately. --}}
+
+
+
+
+     {{!-- Simple Summer Tomato Salad
+     Ingredients 
+     For the vinaigrette
+     2 tablespoons red wine vinegar
+     1 teaspoon Dijon mustard
+     1 teaspoon honey
+     1/4 cup extra-virgin olive oil
+     For the salad
+     1/4 medium red onion, very thinly sliced
+     2 pounds ripe tomatoes, any and all varieties welcome
+     1 teaspoon kosher salt
+     Freshly ground black pepper, to taste
+     1/4 cup fresh basil, chiffonade
+     2 tablespoons fresh mint, chiffonade
+
+     Make the vinaigrette: 
+     In a small bowl, whisk together the vinegar, mustard, and honey until the honey dissolves. Whisk in the olive oil until blended.
+
+     Macerate the red onions:
+     Add the sliced onions into the vinaigrette and tuck them down into the dressing. Set aside to macerate while you assemble the salad.
+
+     Cut the tomatoes:
+     Trim out the stem and base of the stem from the tomatoes. Cut tomatoes into 1/2-inch-thick slices. If you’re including some cherry tomatoes, cut in half.
+
+     Assemble the salad and serve:
+     Arrange the tomatoes on a large plate or medium platter and season both sides with salt. Lightly shower with freshly ground black pepper. 
+     Pour the dressing and onions over the salad. Use your hands to gently nestle the tomatoes in the dressing and distribute the onions evenly. Scatter with basil and mint. Taste and add more salt and/or pepper, if needed. 
+     Serve immediately.
+
+     Storage:
+     This salad is best the day it’s made, but can be enjoyed a day or two later if covered well and stored in the fridge.  
+ --}}
