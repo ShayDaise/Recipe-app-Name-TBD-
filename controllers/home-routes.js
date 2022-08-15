@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Recipe, User, Review, Like } = require('../models');
+const { Recipe, User, Review, Likes } = require('../models');
 
 // get all posts for homepage sorted by most liked
 router.get('/', (req, res) => {
@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
         'id',
         'title',
         'created_at',
-        [sequelize.literal('(SELECT COUNT(*) FROM like WHERE recipe.id = like.recipe_id)'), 'like_count']
+        [sequelize.literal('(SELECT COUNT(*) FROM like WHERE recipe.id = likes.recipe_id)'), 'likes_count']
       ],
       include: [
         {
@@ -52,7 +52,7 @@ router.get('/', (req, res) => {
         'title',
         'recipe_text',
         'created_at',
-        [sequelize.literal('(SELECT COUNT(*) FROM like WHERE recipe.id = like.recipe_id)'), 'like_count']
+        [sequelize.literal('(SELECT COUNT(*) FROM likes WHERE recipe.id = likes.recipe_id)'), 'likes_count']
       ],
       include: [
         {
