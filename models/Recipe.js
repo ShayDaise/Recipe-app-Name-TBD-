@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-// creates our Recipe model
+
+
 class Recipe extends Model {
   static addlike(body, models) {
     return models.Likes.create({
@@ -33,7 +34,6 @@ class Recipe extends Model {
   }
 }
 
-// create fields/columns for Recipe model
 Recipe.init(
   {
     id: {
