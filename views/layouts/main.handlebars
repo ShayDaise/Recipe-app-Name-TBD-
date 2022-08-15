@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" type="text.css" href="/public/css/style.css">
-    <title>Placeholder</title>
+    <title>Foodie Go To!</title>
 </head>
 <body>
   <header>
@@ -14,7 +14,7 @@
       Foodie Go To</h1>
   </header>
 <div class="column has-background-primary-light"></div>
-
+  
   <nav class="navbar is-dark is-full">
     <div class="navbar-brand">
     <a href="/" class="level-left navbar-item">
@@ -34,11 +34,14 @@
     </a>
     </div>
   </nav>
+  
   <main>
     {{{body}}}
   </main>
   {{#if loggedIn}}
   <script src="/public/js/logout.js"></script>
   {{/if}}
+
 </body>
+
 </html>
