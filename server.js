@@ -42,4 +42,3 @@ sequelize.sync({ force: false }).then(() => {
 });
 
 // sequalize.sync run first before seeds otherwise tables wont exist***
-// asynchronous

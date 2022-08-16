@@ -4,56 +4,63 @@ const { Recipe } = require("../models");
 
 const userRecipe = [
   {
-    title: "",
+    title: "Sed ut perspiciatis unde omnis",
     recipe_text:
       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
     user_id: 1,
   },
   {
-    title: "",
+    title: "Sed ut perspiciatis unde omnis",
     recipe_text:
       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
     user_id: 2,
   },
   {
-    title: "",
+    title: "Sed ut perspiciatis unde omnis",
     recipe_text:
       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
     user_id: 3,
   },
   {
-    title: "",
-    recipe_text: "",
+    title: "Sed ut perspiciatis unde omnis",
+    recipe_text:
+      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
     user_id: 4,
   },
   {
-    title: "",
-    recipe_text: "",
+    title: "Sed ut perspiciatis unde omnis",
+    recipe_text:
+      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
     user_id: 5,
   },
   {
-    title: "",
-    recipe_text: "",
+    title: "Sed ut perspiciatis unde omnis",
+    recipe_text:
+      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
     user_id: 6,
   },
   {
-    title: "",
-    recipe_text: "",
+    title: "Sed ut perspiciatis unde omnis",
+    recipe_text:
+      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
     user_id: 7,
   },
   {
-    title: "",
-    recipe_text: "",
+    title: "Sed ut perspiciatis unde omnis",
+    recipe_text:
+      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
     user_id: 8,
   },
   {
-    title: "",
-    recipe_text: "",
+    title: "Sed ut perspiciatis unde omnis",
+    recipe_text:
+      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
     user_id: 9,
   },
   {
-    title: "",
-    recipe_text: "",
+    title: "Sed ut perspiciatis unde omnis",
+    recipe_text:
+      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
     user_id: 10,
   },
 ];
