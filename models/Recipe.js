@@ -1,9 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-// creates our Recipe model
+
+
 class Recipe extends Model {
   static addlike(body, models) {
-    return models.Like.create({
+    return models.Likes.create({
       user_id: body.user_id,
       recipe_id: body.recipe_id
     }).then(() => {
@@ -16,7 +17,7 @@ class Recipe extends Model {
           'title',
           'recipe_text',
           'created_at',
-          [sequelize.literal('(SELECT COUNT(*) FROM like WHERE recipe.id = like.recipe_id)'), 'like_count']
+          [sequelize.literal('(SELECT COUNT(*) FROM likes WHERE recipe.id = likes.recipe_id)'), 'likes_count']
         ],
         include: [
           {
@@ -33,7 +34,6 @@ class Recipe extends Model {
   }
 }
 
-// create fields/columns for Recipe model
 Recipe.init(
   {
     id: {

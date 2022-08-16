@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" type="text.css" href="/public/css/style.css">
-    <title>Placeholder</title>
+    <title>Foodie Go To!</title>
 </head>
 <body>
   <header>
@@ -14,7 +14,7 @@
       Foodie Go To</h1>
   </header>
 <div class="column has-background-primary-light"></div>
-
+  
   <nav class="navbar is-dark is-full">
     <div class="navbar-brand">
     <a href="/" class="navbar-start navbar-item">
@@ -25,82 +25,26 @@
       Logout
     </button>
     {{else}}
-    <a class="navbar-start navbar-item">
+    <a class="level-left navbar-item" href="/login" >
       Login
     </a>
     {{/if}}
     <a class="navbar-item navbar-end level-right">
       Search
     </a>
+    <a class="level-left navbar-item" href="/signup">
+    Sign Up
+    </a>
     </div>
   </nav>
+  
   <main>
-
-   <div class="column has-background-primary-light"></div>
-    <aside>
-      <h2 class="title is-2 has-text-primary-dark has-background-primary-light is-family-code">
-        Recipes</h2>
-    </aside>
-   <div class="column has-background-primary-light"></div>
-
- <div class="column has-background-primary-light">
-    <div class="card column has-background-success-dark">
-      <div class="card-image is-align-items-center">
-     <figure class="image is-3by1">
-      <img src="grilled-peach.png" alt="grilled peach">
-      </figure>
-    </div>
-      <div class="card-content">
-       <p class="card-header-title is-4 is-centered has-text-white">
-         Grilled Peach and Burrata Salad
-       </p>
-       <p class="subtitle has-text-white">
-         Grilled peach and burrata salad is summertime on a plate. The mix of grilled peaches, creamy burrata, arugula, pine nuts and balsamic is perfection. When it comes to summer salads, this one’s a winner.
-        </p>
-     </div>
-    </div>
-</div>
-
-<div class="column has-background-primary-light">
-  <div class="card column has-background-success-dark">
-      <div class="card-image is-align-items-center">
-     <figure class="image is-3by1">
-      <img src="../../assets/images/easy-salad.png" alt="easy salad">
-      </figure>
-    </div>
-      <div class="card-content">
-       <p class="card-header-title is-4 is-centered has-text-white">
-         Easy Cucumber, Peach, and Basil Salad
-       </p>
-       <p class="subtitle has-text-white">
-         Cool, crunchy cucumbers combined with sweet, juicy peaches and dressed in a peppery basil vinaigrette is a great way to make the most of summer and all its gorgeous flavors. This refreshing salad is easy to make and goes great with grilled meat.
-       </p>
-    </div>
-  </div>
-</div>
-
-<div class="column has-background-primary-light">
-<div class="card column has-primary-dark has-background-success-dark">
-      <div class="card-image is-align-items-center">
-     <figure class="image is-3by1">
-      <img src="../../assets/images/tomato-salad.png" alt="tomato salad">
-      </figure>
-    </div>
-      <div class="card-content">
-       <p class="card-header-title is-4 is-centered has-text-white">
-         Simple Summer Tomato Salad
-       </p>
-       <p class="subtitle has-text-white">
-        This simple salad makes the most of juicy tomatoes at the peak of season. Toss ripe tomatoes with a classic vinaigrette, thinly sliced red onion, and a shower of fresh basil and mint. You’ll want to have it on repeat all summer long.
-        </p>
-     </div>
-    </div>
-</div>
-
+    {{{body}}}
   </main>
   {{#if loggedIn}}
-  <script src="/js/logout.js"></script>
+  <script src="/public/js/logout.js"></script>
   {{/if}}
+
 </body>
+
 </html>
- 

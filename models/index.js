@@ -1,7 +1,7 @@
 // imports all models
 const Recipe = require('./Recipe');
 const User = require('./User');
-const Like = require('./Like');
+const Likes = require('./Likes');
 const Review = require('./Review');
 
 // create associations
@@ -18,7 +18,7 @@ User.hasMany(Recipe, {
   
   //associates user to recipes through likes
   User.belongsToMany(Recipe, {
-    through: Like,
+    through: Likes,
     as: 'liked_recipes',
   
     foreignKey: 'user_id',
@@ -27,31 +27,31 @@ User.hasMany(Recipe, {
   
   //associates recipes to users through likes
   Recipe.belongsToMany(User, {
-    through: Like,
+    through: Likes,
     as: 'liked_recipes',
     foreignKey: 'recipe_id',
     onDelete: 'SET NULL'
   });
   
   //sets a users id to the like to identify who liked
-  Like.belongsTo(User, {
+  Likes.belongsTo(User, {
     foreignKey: 'user_id',
     onDelete: 'SET NULL'
   });
   
   //makes it so that each user gets one like per post
-  Like.belongsTo(Recipe, {
+  Likes.belongsTo(Recipe, {
     foreignKey: 'recipe_id',
     onDelete: 'SET NULL'
   });
   
   //users can leave likes
-  User.hasMany(Like, {
+  User.hasMany(Likes, {
     foreignKey: 'user_id'
   });
   
   //each recipe can have multiple likes
-  Recipe.hasMany(Like, {
+  Recipe.hasMany(Likes, {
     foreignKey: 'recipe_id'
   });
   
@@ -82,4 +82,4 @@ User.hasMany(Recipe, {
 
 
 
-module.exports = { User, Recipe, Like, Review };
+module.exports = { User, Recipe, Likes, Review };
