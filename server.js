@@ -34,6 +34,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(require('./controllers/'));
 
+<<<<<<< Updated upstream
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
+=======
+sequelize.sync({ force: true }).then(() => {
+  seedAll();
+  app.listen(PORT, () => console.log("Now listening"));
+});
+
+// sequalize.sync run first before seeds otherwise tables wont exist
+// changed .sync from fale to true to drop tables
+>>>>>>> Stashed changes
