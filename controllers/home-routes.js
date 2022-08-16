@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
         'id',
         'title',
         'created_at',
-        [sequelize.literal('(SELECT COUNT(*) FROM like WHERE recipe.id = likes.recipe_id)'), 'likes_count']
+        [sequelize.literal('(SELECT COUNT(*) FROM likes WHERE recipe.id = likes.recipe_id)'), 'likes_count']
       ],
       include: [
         {
