@@ -55,14 +55,9 @@ const userData = [
   },
 ];
 
-const seedUser = function () {
-  User.bulkCreate(userData)
-    .then(function (users) {
-      console.log("done");
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+const seedUser = async function () {
+  // await User.sync({ force: true });
+  User.bulkCreate(userData);
 };
 
 // Export to sync it in the index.js
