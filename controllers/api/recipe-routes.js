@@ -3,13 +3,13 @@ const sequelize = require('../../config/connection');
 const { Recipe, User, Review, Likes } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// get all users
+// get all recipes
 router.get('/', (req, res) => {
     console.log('======================');
     Recipe.findAll({
       attributes: [
         'id',
-        'recipe_text',
+        'recipe_desc',
         'title',
         'created_at',
         [sequelize.literal('(SELECT COUNT(*) FROM likes WHERE recipe.id = likes.recipe_id)'), 'likes_count']
@@ -44,6 +44,7 @@ router.get('/', (req, res) => {
       attributes: [
         'id',
         'recipe_text',
+        'recipe_desc',
         'title',
         'created_at',
         [sequelize.literal('(SELECT COUNT(*) FROM likes WHERE recipe.id = likes.recipe_id)'), 'likes_count']
@@ -80,6 +81,7 @@ router.get('/', (req, res) => {
     // expects {title: 'Grandma's cookies', recipe_text: 'best cookies ever', user_id: 1}
     Recipe.create({
       title: req.body.title,
+      recipe_desc: req.body.recipe_desc,
       recipe_text: req.body.recipe_text,
       user_id: req.session.user_id
     })

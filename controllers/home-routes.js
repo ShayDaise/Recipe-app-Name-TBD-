@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
       attributes: [
         'id',
         'title',
+        'recipe_desc',
         'created_at',
         [sequelize.literal('(SELECT COUNT(*) FROM likes WHERE recipe.id = likes.recipe_id)'), 'likes_count']
       ],
@@ -30,7 +31,7 @@ router.get('/', (req, res) => {
       .then(dbRecipeData => {
         const recipes = dbRecipeData.map(recipes => recipes.get({ plain: true }));
   
-        res.render('homepage', {
+        res.render('/', {
           recipes,
           loggedIn: req.session.loggedIn
         });
@@ -51,6 +52,7 @@ router.get('/', (req, res) => {
         'id',
         'title',
         'recipe_text',
+        'recipe_desc',
         'created_at',
         [sequelize.literal('(SELECT COUNT(*) FROM likes WHERE recipe.id = likes.recipe_id)'), 'likes_count']
       ],
