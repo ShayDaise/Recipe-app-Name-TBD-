@@ -1,0 +1,15 @@
+{{#if recipes.length}}
+<section>
+  <h2>Your Recipes</h2>
+  <ol>
+    {{#each recipes as |recipe|}}
+    <li>
+      {{> recipe-details recipe}}
+      <a href="/dashboard/edit/{{recipe.id}}" class="edit-link">Edit post</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+<script src="/js/add-recipe.js"></script>
