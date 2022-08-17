@@ -53,6 +53,13 @@ Recipe.init(
         len: [1]
       }
     },
+    recipe_desc: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
     recipe_ingredients: {
         // type: DataTypes.ARRAY,
         type: DataTypes.STRING,

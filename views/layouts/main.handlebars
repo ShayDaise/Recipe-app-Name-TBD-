@@ -21,14 +21,17 @@
      Home
     </a>
     {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">
+    <a id="logout" class="level-left navbar-item">
       Logout
-    </button>
+    </a>
     {{else}}
     <a class="level-left navbar-item" href="/login" >
       Login
     </a>
     {{/if}}
+    <div class="field navbar-item">
+      <input class="input" type="text" placeholder="Search A Recipe">
+    </div>
     <a class="navbar-item navbar-end level-right">
       Search
     </a>

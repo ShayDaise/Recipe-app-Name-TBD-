@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
     Recipe.findAll({
       attributes: [
         'id',
-        'recipe_text',
+        'recipe_desc',
         'title',
         'created_at',
        // [sequelize.literal('(SELECT COUNT(*) FROM like WHERE recipe.id = like.recipe_id)'), 'like_count']
@@ -44,6 +44,7 @@ router.get('/', (req, res) => {
       attributes: [
         'id',
         'recipe_text',
+        'recipe_desc',
         'title',
         'created_at',
         [sequelize.literal('(SELECT COUNT(*) FROM like WHERE recipe.id = like.recipe_id)'), 'like_count']
