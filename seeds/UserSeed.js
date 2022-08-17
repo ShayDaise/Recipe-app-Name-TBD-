@@ -9,8 +9,8 @@ const userData = [
     password: 1234,
   },
   {
-    username: "Tom-1",
-    email: "tom-1@gmail.com",
+    username: "Greg-1",
+    email: "greg-1@gmail.com",
     password: 1234,
   },
   {
