@@ -82,6 +82,7 @@ router.get('/', (req, res) => {
     Recipe.create({
       title: req.body.title,
       recipe_text: req.body.recipe_text,
+      recipe_desc: req.body.recipe_desc,
       user_id: req.session.user_id
     })
       .then(dbRecipeData => res.json(dbRecipeData))
@@ -91,7 +92,7 @@ router.get('/', (req, res) => {
       });
   });
   
-  router.put('addlike', withAuth, (req, res) => {
+  router.put('/addlike', withAuth, (req, res) => {
     // custom static method created in models/Post.js
     Recipe.upvote({ ...req.body, user_id: req.session.user_id }, { Like, Review, User })
       .then(updatedLikeData => res.json(updatedLikeData))
