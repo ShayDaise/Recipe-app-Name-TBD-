@@ -30,7 +30,16 @@ app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/images')));
+
+// app.get("/dynamic", (req, res) => {
+//   imageList = [];
+//   imageList.push({ src: "css/grilled-peach.png", name: "grilled-peach" });
+//   imageList.push({ src: "css/easy-salad.png", name: "easy-salad" });
+//   imageList.push({ src: "css/tomato-salad", name: "tomato-salad" });
+//   res.render("dynamic", { imageList: imageList });
+// })
+
 
 app.use(require('./controllers/'));
 
