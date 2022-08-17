@@ -31,7 +31,7 @@ router.get('/', (req, res) => {
       .then(dbRecipeData => {
         const recipes = dbRecipeData.map(recipes => recipes.get({ plain: true }));
   
-        res.render('/', {
+        res.render('homepage', {
           recipes,
           loggedIn: req.session.loggedIn
         });
