@@ -22,6 +22,7 @@ const sess = {
 app.use(session(sess));
 
 const helpers = require('./utils/helpers');
+const seedAll = require('./seeds/index')
 
 const hbs = exphbs.create({ helpers });
 
@@ -34,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(require('./controllers/'));
 
-sequelize.sync({ force: true }).then(() => {
-  seedAll();
+sequelize.sync({ force: false }).then(() => {
+  //seedAll();
   app.listen(PORT, () => console.log("Now listening"));
 });
