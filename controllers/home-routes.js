@@ -2,7 +2,7 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Recipe, User, Review, Likes } = require('../models');
 
-// get all posts for homepage sorted by most liked
+// get all recipes for homepage sorted by most liked
 router.get('/', (req, res) => {
     console.log('======================');
     Recipe.findAll({
@@ -98,7 +98,7 @@ router.get('/', (req, res) => {
   
     res.render('signup');
   });
-  
+
   router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
       res.redirect('/');

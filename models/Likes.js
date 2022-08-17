@@ -10,9 +10,6 @@ Likes.init(
       primaryKey: true,
       autoIncrement: true
     },
-    count: {
-        type: DataTypes.INTEGER
-      },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
