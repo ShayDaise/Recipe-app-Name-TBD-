@@ -83,6 +83,7 @@ router.get('/', (req, res) => {
       title: req.body.title,
       recipe_desc: req.body.recipe_desc,
       recipe_text: req.body.recipe_text,
+      recipe_desc: req.body.recipe_desc,
       user_id: req.session.user_id
     })
       .then(dbRecipeData => res.json(dbRecipeData))

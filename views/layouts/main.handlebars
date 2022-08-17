@@ -4,32 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" type="text.css" href="/public/css/style.css">
-    <title>Placeholder</title>
+    <title>Foodie Go To!</title>
 </head>
 <body>
   <header>
-    <h1>PLACEHOLDER</h1>
+    <h1 class="title is-1 has-text-primary-dark has-background-primary-light is-family-monospace">
+      Foodie Go To</h1>
   </header>
-  <nav>
-    <a href="/">Home</a>
+<div class="column has-background-primary-light"></div>
+  
+  <nav class="navbar is-dark is-full">
+    <div class="navbar-brand">
+    <a href="/" class="navbar-start navbar-item">
+     Home
+    </a>
     {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
+    <a id="logout" class="level-left navbar-item">
+      Logout
+    </a>
     {{else}}
-    <a>Login</a>
+    <a class="level-left navbar-item" href="/login" >
+      Login
+    </a>
     {{/if}}
-  </nav>
-  <main>
-    <aside>
-      <h2>PLACEHOLDER</h2>
-    </aside>
-    <div>
-      {{{body}}}
+    <div class="field navbar-item">
+      <input class="input" type="text" placeholder="Search A Recipe">
     </div>
+    <a class="navbar-item navbar-end level-right">
+      Search
+    </a>
+    <a class="level-left navbar-item" href="/signup">
+    Sign Up
+    </a>
+    </div>
+  </nav>
+  
+  <main>
+    {{{body}}}
   </main>
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
+
 </body>
 
 </html>

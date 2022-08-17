@@ -1,2 +1,3 @@
-# BookShelf
-book saving and discover app
+# Recipe app name tbd
+
+app to save share, and look at other peoples home recipe's
