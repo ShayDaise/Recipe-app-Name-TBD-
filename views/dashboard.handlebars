@@ -10,7 +10,7 @@
       <label for="post-url">Link</label>
       <input id="post-url" name="post-url" />
     </div>
-    <button type="submit" class="btn">Create</button>
+    <button type="submit" class="btn">Leave Comment</button>
   </form>
 </section>
 
@@ -21,7 +21,7 @@
     {{#each recipes as |recipe|}}
     <li>
       {{> recipe-details recipe}}
-      <a href="/dashboard/edit/{{recipe.id}}" class="edit-link">Edit post</a>
+      <a href="/dashboard/edit/{{recipe.id}}" class="edit-link">Edit Comment</a>
     </li>
     {{/each}}
   </ol>
