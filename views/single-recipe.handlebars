@@ -1,9 +1,9 @@
 <section>
   <div>
-    <h3>{{title}}</h3>
+    <h3>{{recipe.title}}</h3>
     <p>By: {{user.username}}</p>
   </div>
-  <div>{{recipe_text}}</div>
+  <div>{{recipe.recipe_text}}</div>
 </section>
 
 {{#if loggedIn}}
@@ -19,11 +19,10 @@
 </form>
 {{/if}}
 
+
+{{> review recipe.reviews}}
+
 {{#if loggedIn}}
 <script src="/js/reviews.js"></script>
 <script src="/js/addlike.js"></script>
 {{/if}}
-
-<section>
-  {{#each reviews as |review|}}
-</section>
