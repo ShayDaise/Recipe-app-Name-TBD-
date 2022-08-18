@@ -3,33 +3,38 @@
   <h2>
     Edit Recipe
   </h2>
-  <form class=>
+  <form class="edit-recipe-form">
     <div>
-      <input name="post-recipe" type="text" value="{{review.title}}" />
-      <span>({{format_url post.post_url}})</span>
+      <input name="recipe-title" type="text" value="{{recipe.title}}" />
     </div>
     <div>
-      {{post.vote_count}} {{format_plural "point" post.vote_count}} by you on {{format_date post.created_at}}
+      <input name="recipe-desc" type="text" value="{{recipe.recipe_desc}}" />
+    </div>
+    <div>
+      <input name="recipe-text" type="text" value="{{recipe.recipe_text}}" />
+    </div>
+    <div>
+      {{recipe.likes_count}} {{format_plural "point" recipe.likes_count}} by you on {{format_date recipe.created_at}}
       |
-      <a href="/review/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+      <a href="/recipe/{{recipe.id}}">{{recipe.review.length}} {{format_plural "review" recipe.review.length}}</a>
     </div>
-    <button type="submit">Save post</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
+    <button type="submit">Save recipe</button>
+    <button type="button" class="delete-recipe-btn">Delete recipe</button>
   </form>
 </article>
 
-<form class="comment-form">
+<form class="review-form">
   <div>
-    <textarea name="comment-body"></textarea>
+    <textarea name="review-body"></textarea>
   </div>
 
   <div>
-    <button type="submit">Add Comment</button>
+    <button type="submit">Add Review</button>
   </div>
 </form>
 
 {{> reviews review.review_text}}
 
-<script src="/javascript/edit-post.js"></script>
-<script src="/javascript/delete-post.js"></script>
-<script src="/javascript/comment.js"></script>
+<script src="/js/edit-recipe.js"></script>
+<script src="/js/delete-recipe.js"></script>
+<script src="/js/reviews.js"></script>

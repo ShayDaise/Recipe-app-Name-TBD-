@@ -6,6 +6,24 @@
   <div>{{recipe_text}}</div>
 </section>
 
+{{#if loggedIn}}
+<form class="review-form">
+  <div>
+    <textarea name="review-body"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">add a review</button>
+    <button type="button" class="likes-btn">like</button>
+  </div>
+</form>
+{{/if}}
+
+{{#if loggedIn}}
+<script src="/js/reviews.js"></script>
+<script src="/js/addlike.js"></script>
+{{/if}}
+
 <section>
   {{#each reviews as |review|}}
 </section>
