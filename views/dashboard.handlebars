@@ -1,16 +1,20 @@
-<section>
-  <h2>Create New Post</h2>
+<section class="container is-fluid is-centered">
+  <h2>Create New Recipe</h2>
 
-  <form>
+  <form class="new-recipe-form">
     <div>
       <label>Title</label>
-      <input type="text" id="post-title" name="post-title" />
+      <input type="text" id="recipe-title" name="recipe-title" />
     </div>
     <div>
-      <label for="post-url">Link</label>
-      <input id="post-url" name="post-url" />
+      <label for="recipe-desc">Short Description</label>
+      <input type="text" id="recipe-desc" name="recipe-desc" />
     </div>
-    <button type="submit" class="btn">Leave Comment</button>
+    <div>
+      <label for="recipe-text">Instructions</label>
+      <input type="text" id="recipe-text" name="recipe-text" />
+    </div>
+    <button type="submit" class="button is-primary is-light">Create</button>
   </form>
 </section>
 
@@ -21,7 +25,7 @@
     {{#each recipes as |recipe|}}
     <li>
       {{> recipe-details recipe}}
-      <a href="/dashboard/edit/{{recipe.id}}" class="edit-link">Edit Comment</a>
+      <a href="/dashboard/edit/{{recipe.id}}" class="edit-link button is-dark is-light">Edit Recipe</a>
     </li>
     {{/each}}
   </ol>

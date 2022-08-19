@@ -9,7 +9,6 @@ router.get('/', (req, res) => {
       attributes: [
         'id',
         'title',
-        'recipe_desc',
         'created_at',
         [sequelize.literal('(SELECT COUNT(*) FROM likes WHERE recipe.id = likes.recipe_id)'), 'likes_count']
       ],
