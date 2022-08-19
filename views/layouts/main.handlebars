@@ -25,10 +25,11 @@
       Logout
     </a>
     {{else}}
-    <a class="level-left navbar-item" href="/login" >
+    <a class="level-left navbar-item" href="/login">
       Login
     </a>
     {{/if}}
+    
     <div class="field navbar-item">
       <input class="input" type="text" placeholder="Search A Recipe">
     </div>
@@ -40,8 +41,10 @@
     </a>
     </div>
   </nav>
-
+  <main>
+    {{{body}}}
   </main>
+  
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
